@@ -1,6 +1,9 @@
 package calculation
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_Abs(t *testing.T) {
 	var x, y int
@@ -54,6 +57,26 @@ func Test_Max(t *testing.T) {
 
 	y = 3
 	x = Max(1, 3, 0)
+	if x != y {
+		t.Error("Expected ", y, "got ", x)
+	}
+}
+
+func Test_Pow(t *testing.T) {
+	var x, y int
+	y = 16
+	x = Pow(2, 4)
+	if x != y {
+		t.Error("Expected ", y, "got ", x)
+	}
+}
+
+func Test_Multiply(t *testing.T) {
+	var x, y int
+	x = 20
+	y = Multiply(4, 5)
+	fmt.Println(y)
+
 	if x != y {
 		t.Error("Expected ", y, "got ", x)
 	}
